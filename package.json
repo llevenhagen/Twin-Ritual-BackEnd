@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
-    "start": "./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'node index.js'",
+    "start": "./node_modules/nodemon/bin/nodemon.js src/app.js --exec 'node ./router/index.js'",
     "lint": "./node_modules/.bin/eslint '**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
