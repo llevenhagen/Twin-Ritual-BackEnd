@@ -1,18 +1,12 @@
 module.exports = {
-  port: process.env.PORT || 5432 || 8081,
+  port: process.env.PORT || 8081,
   db: {
-    production: {
-    use_env_variable: process.env.DATABASE_URL
-  },
-    database: process.env.DATABASE_URL || process.env.DB_NAME || 'twinritual',
+    database: process.env.DB_NAME || 'twinritual',
     user: process.env.DB_USER || 'Laura',
     password: process.env.DB_PASS || 'null',
     options: {
       dialect: process.env.DIALECT || 'postgres',
-      dialectOptions: {
-        ssl: true
-    },
-      host: process.env.HOST || 'https://pacific-oasis-69769.herokuapp.com/' || 'localhost' || '0.0.0.0'
+      host: process.env.HOST || 'localhost'
     }
   },
   authentication: {

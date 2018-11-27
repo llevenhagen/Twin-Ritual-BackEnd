@@ -4,23 +4,19 @@ const Sequelize = require('sequelize')
 const config = require('../config/config')
 const db = {}
 
+let sequelize = null
 if (process.env.DATABASE_URL) {
-const sequelize =new Sequelize(process.env.DATABASE_URL,
- {
-   dialect: "postgres",
-   protocol: "postgres",
-   port: 5432,
-   host: "https://pacific-oasis-69769.herokuapp.com/",
-   logging: true //false
-})
+sequelize = new Sequelize(process.env.DATABASE_URL, {
+  dialect: 'postgres',
+  protocol: 'postgres'
+  })
 } else {
-const sequelize = new Sequelize(
-  config.production,
-  config.db.database,
-  config.db.user,
-  config.db.password,
-  config.db.options
-)
+  sequelize = new Sequelize(
+    config.db.database,
+    config.db.user,
+    config.db.password,
+    config.db.options
+  )
 }
 fs
   .readdirSync(__dirname)
