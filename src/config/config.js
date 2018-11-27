@@ -4,7 +4,7 @@ module.exports = {
     production: {
     use_env_variable: process.env.DATABASE_URL
   },
-    database: process.env.DB_NAME || 'twinritual',
+    database: process.env.DATABASE_URL || process.env.DB_NAME || 'twinritual',
     user: process.env.DB_USER || 'Laura',
     password: process.env.DB_PASS || 'null',
     options: {
