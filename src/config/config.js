@@ -6,6 +6,9 @@ module.exports = {
     password: process.env.DB_PASS || 'null',
     options: {
       dialect: process.env.DIALECT || 'postgres',
+      dialectOptions: {
+        ssl: true
+    },
       host: process.env.HOST || 'https://pacific-oasis-69769.herokuapp.com/' || 'localhost' || '0.0.0.0'
     }
   },
