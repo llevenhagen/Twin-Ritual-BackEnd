@@ -4,7 +4,7 @@ module.exports = {
     production: {
     use_env_variable: process.env.DATABASE_URL
   },
-    database: 'postgres://jhusegffqvoscz:c8d3622843f16640239518de9968f785020ea2664ad1ad6925e4d63b1f8fd79b@ec2-54-197-234-33.compute-1.amazonaws.com:5432/d56eqrnb6q7vbd' || process.env.DB_NAME || 'twinritual',
+    database: process.env.DATABASE_URL || process.env.DB_NAME || 'twinritual',
     user: process.env.DB_USER || 'Laura',
     password: process.env.DB_PASS || 'null',
     options: {
