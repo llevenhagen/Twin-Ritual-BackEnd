@@ -1,7 +1,8 @@
 module.exports = {
   port: process.env.PORT || 5432 || 8081,
   db: {
-    database: process.env.DATABASE_URL || 'twinritual',
+    use_env_variable: DATABASE_URL,
+    database: process.env.DB_NAME || 'twinritual',
     user: process.env.DB_USER || 'Laura',
     password: process.env.DB_PASS || 'null',
     options: {
