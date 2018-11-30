@@ -5,14 +5,21 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DECIMAL,
     description: DataTypes.STRING,
     in_stock: DataTypes.BOOLEAN,
-    item_id: DataTypes.INTEGER
+    item_id: {
+      type: Sequelize.INTEGER, // or choose what you want
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    }
   })
-  // merch.associate = function (models) {
-  //   merch.belongsTo(models.user, {
-  //     through: 'usercart',
-  //     as: 'items',
-  //     foreignKey: 'item_id'
-  //   })
-  // }
+  merch.associate = function (models) {
+    merch.belongsTo(models.user, {
+      through: 'usercart',
+      as: 'items',
+      foreignKey: 'item_id'
+    })
+  }
   return merch
 }
