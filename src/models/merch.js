@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     merch.belongsTo(models.user, {
       through: 'usercart',
       as: 'items',
-      foreignKey: 'itemId'
+      foreignKey: 'item_id'
     })
   }
   return merch
