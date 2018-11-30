@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
   })
   merch.associate = function (models) {
     merch.belongsTo(models.user, {
-      through: 'usercart',
-      as: 'items',
+      through: 'cart',
+      as: 'item_id',
       foreignKey: 'item_id'
     })
   }
