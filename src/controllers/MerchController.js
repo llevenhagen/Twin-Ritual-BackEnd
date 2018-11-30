@@ -1,5 +1,4 @@
 const models = require('../models')
-
 module.exports = {
   async index (req, res) {
     try {
@@ -8,9 +7,8 @@ module.exports = {
       })
       res.send(merch)
     } catch (err) {
-      res.status(500).send({
-        error: 'An error has occurred trying to fetch the merch.'
-      })
+      console.log(err)
+      res.status(500).send(err)
     }
   },
   async show (req, res) {
