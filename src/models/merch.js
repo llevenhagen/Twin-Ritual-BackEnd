@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.TEXT,
     price: DataTypes.DECIMAL,
     description: DataTypes.STRING,
-    in_stock: DataTypes.BOOLEAN
+    in_stock: DataTypes.BOOLEAN,
+    item_id: DataTypes.INTEGER
   })
   merch.associate = function (models) {
     merch.belongsTo(models.user, {
