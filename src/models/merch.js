@@ -7,12 +7,12 @@ module.exports = (sequelize, DataTypes) => {
     in_stock: DataTypes.BOOLEAN,
     item_id: DataTypes.INTEGER
   })
-  merch.associate = function (models) {
-    merch.belongsTo(models.user, {
-      through: 'cart',
-      as: 'item_id',
-      foreignKey: 'item_id'
-    })
-  }
+  // merch.associate = function (models) {
+  //   merch.belongsTo(models.user, {
+  //     through: 'usercart',
+  //     as: 'items',
+  //     foreignKey: 'item_id'
+  //   })
+  // }
   return merch
 }
