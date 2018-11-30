@@ -4,6 +4,8 @@ const AuthenticationControllerPolicy = require('./policies/AuthenticationControl
 
 const MerchController = require('./controllers/MerchController'
 )
+const CartController = require('./controllers/CartController')
+
 module.exports = (app) => {
   app.post('/register',
     AuthenticationControllerPolicy.register,
@@ -26,4 +28,16 @@ module.exports = (app) => {
 
   app.delete('/merch/:itemId',
     MerchController.delete)
+
+  app.get('/cart',
+    CartController.index)
+
+  app.post('/cart',
+    CartController.post)
+
+  app.delete('/cart/:userId/:itemId',
+    CartController.delete)
+
+  app.get('/cart/:userId',
+    CartController.cart)
 }
