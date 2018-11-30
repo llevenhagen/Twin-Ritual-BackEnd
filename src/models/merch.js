@@ -4,7 +4,14 @@ module.exports = (sequelize, DataTypes) => {
     image: DataTypes.TEXT,
     price: DataTypes.DECIMAL,
     description: DataTypes.STRING,
-    inStock: DataTypes.BOOLEAN
+    in_stock: DataTypes.BOOLEAN
   })
+  merch.associate = function (models) {
+    merch.belongsTo(models.user, {
+      through: 'usercart',
+      as: 'items',
+      foreignKey: 'itemId'
+    })
+  }
   return merch
 }
