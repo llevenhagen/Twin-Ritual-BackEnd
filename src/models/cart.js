@@ -1,10 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
-  const cart = sequelize.define('cart', {})
-
-  cart.associate = function (models) {
-    cart.belongsTo(models.user)
-    cart.belongsTo(models.merch)
-  }
-
+  const cart = sequelize.define('cart', {
+    merchId: DataTypes.INTEGER,
+    userID: DataTypes.INTEGER
+  })
   return cart
 }
